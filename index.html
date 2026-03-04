@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Directory — georgetaylor3978</title>
+    <meta name="description" content="A live directory of all public dashboards by georgetaylor3978, automatically updated from GitHub.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="7" rx="1" />
+                        <rect x="14" y="3" width="7" height="7" rx="1" />
+                        <rect x="3" y="14" width="7" height="7" rx="1" />
+                        <rect x="14" y="14" width="7" height="7" rx="1" />
+                    </svg>
+                </div>
+                <div>
+                    <h1><span class="canada-flag">🇨🇦</span> Dashboard Directory</h1>
+                    <div class="subtitle">All public dashboards — auto-discovered from GitHub</div>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="data-status" id="dataStatus">
+                    <span class="status-dot"></span>
+                    <span id="statusText">Loading…</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- How-to Banner -->
+    <section class="how-to-banner" id="howToBanner">
+        <div class="how-to-content">
+            <button class="how-to-toggle" id="howToToggle" aria-expanded="false">
+                <svg class="info-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 16v-4" />
+                    <path d="M12 8h.01" />
+                </svg>
+                <span>How to add categories & descriptions</span>
+                <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 9l6 6 6-6" />
+                </svg>
+            </button>
+            <div class="how-to-details" id="howToDetails">
+                <p>Go to any repo on GitHub → <strong>Settings</strong> (gear icon at top) → scroll to <strong>"Topics"</strong>.</p>
+                <ul>
+                    <li><strong>Category:</strong> Add a topic starting with <code>category-</code> (e.g. <code>category-fiscal-policy</code>). The part after the dash becomes the group heading.</li>
+                    <li><strong>Description:</strong> Edit the repo's <strong>"About"</strong> section (top-right of the repo page, pencil icon) to set a description.</li>
+                </ul>
+                <p>Changes take effect the next time this page is opened — no code changes needed.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Loading State -->
+        <div class="loading-state" id="loadingState">
+            <div class="spinner"></div>
+            <p>Discovering dashboards…</p>
+        </div>
+
+        <!-- Error State -->
+        <div class="error-state" id="errorState" style="display:none;">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 8v4" />
+                <path d="M12 16h.01" />
+            </svg>
+            <p id="errorMessage">Could not reach GitHub.</p>
+            <button class="retry-btn" id="retryBtn">Retry</button>
+        </div>
+
+        <!-- Dashboard Grid — populated by JS -->
+        <div id="dashboardContainer" style="display:none;"></div>
+    </main>
+
+    <footer class="footer">
+        <p>Auto-generated from <a href="https://github.com/georgetaylor3978" target="_blank" rel="noopener noreferrer">github.com/georgetaylor3978</a> · Refreshes on every visit</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
