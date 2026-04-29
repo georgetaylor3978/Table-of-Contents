@@ -31,6 +31,9 @@
                 </div>
             </div>
             <div class="header-actions">
+                <button class="wizard-btn" id="wizardBtn" title="Enter the hidden realm">
+                    <img src="wizgrey.png" alt="Wizard" id="wizardImg" class="wizard-icon">
+                </button>
                 <div class="data-status" id="dataStatus">
                     <span class="status-dot"></span>
                     <span id="statusText">Loading…</span>
@@ -88,6 +91,16 @@
         <!-- Dashboard Grid — populated by JS -->
         <div id="dashboardContainer" style="display:none;"></div>
     </main>
+
+    <!-- Wizard Password Modal -->
+    <div class="wizard-modal-overlay" id="wizardModal">
+        <div class="wizard-modal">
+            <img src="wizred.png" alt="Red Wizard" class="wizard-modal-img">
+            <p class="wizard-prompt" id="wizardPrompt">Magic Word</p>
+            <input type="password" class="wizard-input" id="wizardInput" placeholder="Speak, friend…" autocomplete="off">
+            <button class="wizard-submit" id="wizardSubmit">Enter</button>
+        </div>
+    </div>
 
     <footer class="footer">
         <p>Auto-generated from <a href="https://github.com/georgetaylor3978" target="_blank" rel="noopener noreferrer">github.com/georgetaylor3978</a> · Refreshes on every visit</p>
