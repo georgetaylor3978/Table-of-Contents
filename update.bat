@@ -1,6 +1,6 @@
 @echo off
 echo ============================================
-echo   Table-of-Contents - Update Script
+echo   DashboardRepo - Update Script
 echo ============================================
 echo.
 echo Committing to Git...
